@@ -1,0 +1,8 @@
+node_modules
+package-lock.json
+omegga.d.ts
+.build
+target
+
+*.d.ts
+*.node

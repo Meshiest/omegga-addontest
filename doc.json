@@ -1,0 +1,25 @@
+{
+  "name": "addontest",
+  "description": "An example plugin using node addons",
+  "author": "cake",
+  "config": {},
+  "commands": [
+    {
+      "name": "/sum",
+      "description": "sum two numbers",
+      "example": "/sum 1 2",
+      "args": [
+        {
+          "name": "a",
+          "description": "left hand operand",
+          "required": true
+        },
+        {
+          "name": "b",
+          "description": "right hand operand",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
