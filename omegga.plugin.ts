@@ -3,7 +3,7 @@ import OmeggaPlugin, { OL, PS, PC } from 'omegga';
 type Config = { foo: string };
 type Storage = { bar: string };
 
-import { sum } from './addontest.node';
+import { sum, getVersion } from './addontest.node';
 
 export default class Plugin implements OmeggaPlugin<Config, Storage> {
   omegga: OL;
@@ -31,7 +31,11 @@ export default class Plugin implements OmeggaPlugin<Config, Storage> {
       Omegga.whisper(speaker, `${numA} + ${numB} = ${sum(numA, numB)}`);
     });
 
-    return { registeredCommands: ['sum'] };
+    this.omegga.on('cmd:version', () => {
+      getVersion(this.omegga);
+    });
+
+    return { registeredCommands: ['sum', 'version'] };
   }
 
   async stop() {}

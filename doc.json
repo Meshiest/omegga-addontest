@@ -20,6 +20,11 @@
           "required": true
         }
       ]
+    },
+    {
+      "name": "/version",
+      "description": "print the game version",
+      "example": "/version"
     }
   ]
 }
